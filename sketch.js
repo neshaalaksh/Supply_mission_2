@@ -37,9 +37,10 @@ function setup() {
 
 	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
+	rect1=new Rect(width/2,650,200,20);
+	rect2=new Rect(width/2+100,620,20,100);
+	rect3=new Rect(width/2-100,620,20,100);
  	World.add(world, ground);
-
-
 	Engine.run(engine);
   
 }
@@ -50,6 +51,9 @@ function draw() {
   background(0);
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
+  rect1.display();
+  rect2.display();
+  rect3.display();
   drawSprites();
  
 }
@@ -58,7 +62,7 @@ function keyPressed() {
  if (keyCode === DOWN_ARROW) {
 	// Look at the hints in the document and understand how to make the package body fall only on press of the Down arrow key.
 	Matter.Body.setStatic(packageBody,false);
-    
+	
   }
 }
 
